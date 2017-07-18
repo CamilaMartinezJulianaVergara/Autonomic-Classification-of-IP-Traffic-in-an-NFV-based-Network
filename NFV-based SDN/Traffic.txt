@@ -1,8 +1,21 @@
 =================================================
        Traffic generation - D-ITG
 =================================================
+#To generate traffic using D-ITG and previously created .dat files, follow next steps:
 
-#Five seconds
+#In destination host
+  $ cd D-ITG-2.8.1-r1023/bin
+  $ ./ITGRecv 
+
+#In source hots
+
+  $ cd D-ITG-2.8.1-r1023/bin
+  $ ./ITGSend <name_dat_file>.dat
+
+=================================================
+                .dat Files
+=================================================
+#Five seconds - ones.dat
 -a 10.0.0.6 -C 1000 -c 512 -t 5000 -T TCP
 -a 10.0.0.34 -C 1000 -c 512 -t 5000 -T TCP
 -a 10.0.0.1 -C 1000 -c 512 -t 5000 -T TCP
@@ -15,7 +28,7 @@
 -a 10.0.0.23 -C 1000 -c 512 -t 5000 -T TCP
 -a 10.0.0.45 -C 1000 -c 512 -t 5000 -T TCP
 
-#Ten seconds
+#Ten seconds - tens.dat
 -a 10.0.0.20 -C 1000 -c 512 -t 10000 -T TCP
 -a 10.0.1.66 -C 1000 -c 512 -t 10000 -T TCP
 -a 10.0.1.67 -C 1000 -c 512 -t 10000 -T TCP
@@ -28,7 +41,7 @@
 -a 10.0.1.80 -C 1000 -c 512 -t 10000 -T TCP
 -a 10.0.1.81 -C 1000 -c 512 -t 10000 -T TCP
 
-#One minute
+#One minute - onem.dat
 -a 10.0.0.64 -C 1000 -c 512 -t 60000 -T TCP
 -a 10.0.0.3 -C 2000 -c 512 -t 60000 -T TCP
 -a 10.0.0.23 -C 3000 -c 512 -t 60000 -T TCP
@@ -41,7 +54,7 @@
 -a 10.0.1.65 -C 1000 -c 512 -t 60000 -T TCP
 -a 10.0.0.23 -C 1000 -c 512 -t 60000 -T TCP
 
-#Five minutes
+#Five minutes - fivem.dat
 -a 10.0.0.5 -C 1000 -c 512 -t 300000 -T TCP
 -a 10.0.0.20 -C 2000 -c 512 -t 300000 -T TCP
 -a 10.0.1.128 -C 1000 -c 512 -t 300000 -T TCP
@@ -49,9 +62,9 @@
 -a 10.0.1.95 -C 2000 -c 512 -t 300000 -T TCP
 -a 10.0.1.70 -C 2000 -c 512 -t 300000 -T TCP
 
-#Fifteen minutes
+#Fifteen minutes - fifm.dat
 -a 10.0.0.35 -C 3000 -c 512 -t 900000 -T TCP
 -a 10.0.1.99 -C 2000 -c 512 -t 900000 -T TCP
 
-#Thirty minutes
+#Thirty minutes - thirtym.dat
 -a 10.0.1.95 -C 3000 -c 512 -t 1800000 -T TCP
