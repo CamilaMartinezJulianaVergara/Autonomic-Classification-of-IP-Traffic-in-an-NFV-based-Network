@@ -4,6 +4,7 @@
 
 #Command cused for the conversion of the data to .csv file and the extraction of the features.
 
-tshark -r PointA.pcapng -T fields -e frame.len -e frame.protocols -e eth.dst -e eth.src -e eth.type -e ip.proto -e ip.src  -e ip.dst -e ip.hdr_len -e tcp.srcport -e tcp.dstport -e tcp.seq -e tcp.hdr_len -e tcp.window_size -E header=y -E separator=, -E quote=d -E occurrence=f  > PuertoA.csv
+tshark -r PointA.pcapng -T fields -e frame.len -e frame.protocols -e eth.dst -e eth.src -e eth.type \\
+-e ip.proto -e ip.src  -e ip.dst -e ip.hdr_len -e tcp.srcport -e tcp.dstport -e tcp.seq -e tcp.hdr_len -e tcp.window_size -E header=y -E separator=, -E quote=d -E occurrence=f  > PuertoA.csv
 
 #This command should use in the library where the .pcapng file is located
