@@ -215,3 +215,10 @@ def emptyNet():
     s41.cmd('ovs-vsctl add-port s41 s41-gre1 -- set interface s41-gre1 type=gre options:remote_ip='+NODE1_IP)
     s42.cmd('ovs-vsctl add-port s42 s42-gre1 -- set interface s42-gre1 type=gre options:remote_ip='+NODE1_IP)
     s42.cmdPrint('ovs-vsctl show')
+    
+     CLI( net )
+    net.stop()
+
+if __name__ == '__main__':
+    setLogLevel( 'info' )
+    emptyNet()
