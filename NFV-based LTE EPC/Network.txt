@@ -1,1 +1,8 @@
 
+=================================================
+Virtualized Evolved Packet Core for LTE Networks
+=================================================
+
+#For emulating a mobile network, we take as a basis the emulation of an NFV-based LTE EPC network (available online in URL: 
+https://github.com/networkedsystemsIITB/NFV_LTE_EPC).
+
