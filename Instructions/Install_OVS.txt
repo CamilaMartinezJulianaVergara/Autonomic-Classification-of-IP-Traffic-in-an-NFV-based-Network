@@ -1,1 +1,35 @@
+================================
+  Open vSwitch Configuration
+================================
 
+#Install Open vSwitch as package
+  apt-get update
+  apt-get install openvswitch-switch
+
+#Create and up a bridge (bridge0)
+  ovs-vsctl add-br bridge0
+  ifconfig bridge0 up
+  ifconfig
+
+#Connect the eth0 interface of Ubuntu to bridge0
+  ovs-vsctl add-port bridge0 eth0
+ 
+#To recover Internet we must delete the existing IP address in eth0
+  ifconfig eth0 0
+  
+#And run a new DHCP query from bridge0
+ dhclient bridge0
+ 
+#Create interfaces
+  ip tuntap add mode tap vmport1
+  ip tuntap add mode tap vmport2
+  ifconfig vmport1 up
+  ifconfig vmport2 up
+  
+#Add the interfaces to the bridge
+  ovs-vsctl add-port bridge0 vmport1
+  ovs-vsctl add-port bridge0 vmport1
+  
+#To connect virtual machines to that bridge, using VirtualBox VM, enter the network 
+configuration of each machine and choose the port of the bridge to use.
+  
