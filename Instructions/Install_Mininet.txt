@@ -1,1 +1,8 @@
 
+
+# Install Mininet (v2.2.1rc1)
+git clone git://github.com/mininet/mininet
+cd mininet
+git checkout -b 2.2.1rc1 2.2.1rc1
+cd ..
+mininet/util/install.sh -nfw
